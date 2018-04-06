@@ -23,7 +23,7 @@ class ClimaForm extends Component {
     	const clima = {
 			ciudad: this.state.ciudad,
 			temperatura: parseFloat(this.state.temperatura),
-			estado: this.state.estado
+			estado: this.state.estado || "Lluvioso"
 		};
 		// axios.post("http://localhost:3001/api/v1/climas",
 		axios.post("https://reporte-clima-odh.herokuapp.com/api/v1/climas",
@@ -72,7 +72,7 @@ class ClimaForm extends Component {
 				        <FormGroup>
 				          <Label for="estado">Estado</Label>
 				          <Input value={this.state.estado} onChange={this.handleInput} type="select" name="estado" id="estado">
-				            <option selected="selected">Lluvioso</option>
+				            <option>Lluvioso</option>
 				            <option>Nublado</option>
 				            <option>Soleado</option>
 				            <option>Despejado</option>
