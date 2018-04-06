@@ -47,7 +47,7 @@ class ClimaForm extends Component {
 
 	toggle() {
 		let newData = {};
-		if (this.state.modal && this.state.isNew) {
+		if (this.state.modal) {
 			newData = {
 				ciudad: "",
 				temperatura: "",
