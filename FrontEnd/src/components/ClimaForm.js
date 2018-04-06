@@ -71,8 +71,8 @@ class ClimaForm extends Component {
 				        </FormGroup>
 				        <FormGroup>
 				          <Label for="estado">Estado</Label>
-				          <Input value={this.state.estado} onChange={this.handleInput} type="select" name="estado" id="estado">
-				            <option selected="selected">Lluvioso</option>
+				          <Input defaultValue="Lluvioso" value={this.state.estado} onChange={this.handleInput} type="select" name="estado" id="estado">
+				            <option>Lluvioso</option>
 				            <option>Nublado</option>
 				            <option>Soleado</option>
 				            <option>Despejado</option>
