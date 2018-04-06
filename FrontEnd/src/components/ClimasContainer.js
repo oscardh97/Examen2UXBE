@@ -17,7 +17,8 @@ class ClimasContainer extends Component {
 	}
 
 	getReporte = () => {
-		axios.get('http://localhost:3001/api/v1/climas.json')
+		axios.get('https://reporte-clima-odh.herokuapp.com/api/v1/climas.json')
+		// axios.get('http://localhost:3001/api/v1/climas.json')
 		.then(response => {
 			this.setState({
 				climas: response.data
