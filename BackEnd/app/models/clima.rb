@@ -1,2 +1,0 @@
-class Clima < ApplicationRecord
-end
