@@ -25,7 +25,7 @@ class ClimaForm extends Component {
 			temperatura: parseFloat(this.state.temperatura),
 			estado: this.state.estado || "Lluvioso"
 		};
-		// axios.post("http://localhost:3001/api/v1/climas",
+		// axios.post("https://reporte-clima-odh.herokuapp.com/api/v1/climas",
 		axios.post("http://localhost:3001/api/v1/climas",
 			{clima: clima}
 		).then(response => {
