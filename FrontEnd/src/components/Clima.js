@@ -1,13 +1,18 @@
 import React, { Component } from 'react'
+import { Card, CardTitle, CardText, CardSubtitle } from 'reactstrap';
 
 class Clima extends Component {
 	render() {
+		const colors = ["primary", "secondary", "success", "info", "warning", "danger"];
 		return (
-			<div className="tile" key={this.props.clima.id}>
-				<h4>{this.props.clima.ciudad}</h4>
-				<p>{this.props.clima.temperatura}</p>
-				<p>{this.props.clima.estado}</p>
+			<div>
+				<Card body inverse color={colors[Math.floor(Math.random() * (colors.length - 1))]} className="climaCard">
+			        <CardTitle>{this.props.clima.ciudad}</CardTitle>
+			        <CardSubtitle>Temperatura: {this.props.clima.temperatura}</CardSubtitle>
+			        <CardText>Estado: {this.props.clima.estado}</CardText>
+			    </Card>
 			</div>
+
 		)
 	}
 }

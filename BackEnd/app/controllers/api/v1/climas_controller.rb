@@ -1,7 +1,7 @@
 module Api::V1
   class ClimasController < ApplicationController
     def index
-      @climas = Clima.all
+      @climas = Clima.order("created_at DESC")
       render json: @climas
     end
 

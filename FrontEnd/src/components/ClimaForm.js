@@ -53,8 +53,7 @@ class ClimaForm extends Component {
 	handleInput = (e) => {
 	    this.setState({
 	    	[e.target.name]: e.target.value
-	    })
-	    console.log(e.target.value)
+	    });
 	}
 	render() {
 		return (
@@ -64,11 +63,11 @@ class ClimaForm extends Component {
 					<ModalBody>
 						<FormGroup>
 				          <Label for="ciudad">Ciudad</Label>
-				          <Input type="text" name="ciudad" id="ciudad" placeholder="ciudad..." value={this.state.ciudad} onChange={this.handleInput} />
+				          <Input type="text" name="ciudad" id="ciudad" placeholder="Ciudad..." value={this.state.ciudad} onChange={this.handleInput} />
 				        </FormGroup>
 				        <FormGroup>
 				          <Label for="temperatura">Temperatura</Label>
-				          <Input type="number" name="temperatura" id="temperatura" placeholder="temperatura..." value={this.state.temperatura} onChange={this.handleInput}/>
+				          <Input type="number" name="temperatura" id="temperatura" placeholder="Temperatura..." value={this.state.temperatura} onChange={this.handleInput}/>
 				        </FormGroup>
 				        <FormGroup>
 				          <Label for="estado">Estado</Label>
@@ -76,6 +75,8 @@ class ClimaForm extends Component {
 				            <option>Lluvioso</option>
 				            <option>Nublado</option>
 				            <option>Soleado</option>
+				            <option>Despejado</option>
+				            <option>Nevado</option>
 				          </Input>
 				        </FormGroup>
 					</ModalBody>

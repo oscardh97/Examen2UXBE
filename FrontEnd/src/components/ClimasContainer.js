@@ -36,7 +36,7 @@ class ClimasContainer extends Component {
 		          ref = {(form) => {this.child = form}}
 		          updateParent = {this.getReporte}
 		        />
-				<Button color="primary" onClick={this.openForm}>
+				<Button onClick={this.openForm}>
 				  Agregar Clima
 				</Button>
 				{this.state.climas.map((clima) => {
