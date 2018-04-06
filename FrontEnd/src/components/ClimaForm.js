@@ -10,11 +10,40 @@ class ClimaForm extends Component {
 			ciudad: this.props.ciudad,
 			temperatura: this.props.temperatura,
 			estado: this.props.estado,
-			// updateParent: this.props.updateParent
+			updateParent: this.props.updateParent
 		};
 
 		this.toggle = this.toggle.bind(this);
 	}
+
+
+	save = () => {
+		let _self = this;
+
+    	const clima = {
+			ciudad: this.state.ciudad,
+			temperatura: parseFloat(this.state.temperatura),
+			estado: this.state.estado
+		};
+		// axios.post("http://localhost:3001/api/v1/climas",
+		axios.post("http://localhost:3001/api/v1/climas",
+			{clima: clima}
+		).then(response => {
+			console.log(response)
+			 // this.setState(response.data);
+			 
+			 if (this.state.updateParent) {
+			 	this.state.updateParent();
+			 }
+			 if (this.state.modal){
+				_self.toggle();
+			 }
+			 	
+		}).catch(error => {
+			console.log(error)
+		});
+	}
+
 
 	toggle() {
 		this.setState({
@@ -25,6 +54,7 @@ class ClimaForm extends Component {
 	    this.setState({
 	    	[e.target.name]: e.target.value
 	    })
+	    console.log(e.target.value)
 	}
 	render() {
 		return (
@@ -42,7 +72,7 @@ class ClimaForm extends Component {
 				        </FormGroup>
 				        <FormGroup>
 				          <Label for="estado">Estado</Label>
-				          <Input type="select" name="estado" id="estado">
+				          <Input value={this.state.estado} onChange={this.handleInput} type="select" name="estado" id="estado">
 				            <option>Lluvioso</option>
 				            <option>Nublado</option>
 				            <option>Soleado</option>

@@ -12,6 +12,10 @@ class ClimasContainer extends Component {
 		}
 	}
 
+	componentDidMount() {
+		this.getReporte()
+	}
+
 	getReporte = () => {
 		axios.get('http://localhost:3001/api/v1/climas.json')
 		.then(response => {
